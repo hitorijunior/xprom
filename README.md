@@ -5,7 +5,7 @@ This tool is to facilitate the termux metasploit pentest, please use it wisely
 
 ### INSTALATION
 * <pre><code> wget https://raw.githubusercontent.com/x-presss/x-msfconsole/main/xpres?token=GHSAT0AAAAAAB2BN24K5U7K62VANP3Z5WD6Y2NSHRA; mv xpres $PREFIX/bin; mkdir $PREFIX/bin/src </code></pre>
-* install xpresss.apk in src
+* download xpresss.apk in src
 * move to internal
 * <pre><code> mv $sdcard/xpresss.apk $PREFIX/bin/src </code></pre>
 
