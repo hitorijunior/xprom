@@ -1,0 +1,2 @@
+# x-msfconsole
+msfconsole virus
