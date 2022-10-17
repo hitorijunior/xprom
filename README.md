@@ -10,9 +10,10 @@ This tool is to facilitate the termux metasploit pentest, please use it wisely
 * <pre><code> mv $sdcard/xpresss.apk $PREFIX/bin/src </code></pre>
 
 ### xploit -h
-_________________________________________________
-this command to display the menu menu in the tool
 
-### xploit --h
+this command to display the menu menu in the tool
 _________________________________________________
+### xploit --h
+
 this command to display the material that has been installed or not installed
+_________________________________________________
